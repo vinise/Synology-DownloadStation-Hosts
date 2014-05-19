@@ -12,7 +12,7 @@ class SynoFileHostingUptobox {
 	private $Password;
 	private $HostInfo;
 	private $UPTO_COOKIE_JAR = '/tmp/uptobox.cookie';
-	private $LOGIN_URL = "http://uptobox.com/login.html";
+	private $LOGIN_URL = "https://login.uptobox.com/";
 		
 	public function __construct($Url, $Username, $Password, $HostInfo) {
 		$this->Url = $Url;
@@ -41,9 +41,7 @@ class SynoFileHostingUptobox {
 		$PostData = array('op'=>'login',
 						'redirect'=>'http%3A%2F%2Fuptobox.com%2F',
 						'login'=>$this->Username,
-						'password'=>$this->Password,
-						'x'=>'32',
-						'y'=>'11'
+						'password'=>$this->Password
 		);
 		$queryUrl = $this->LOGIN_URL;
 		$PostData = http_build_query($PostData);
